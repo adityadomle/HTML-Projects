@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Frame Layout</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #889398;
+      text-align: center;
+    }
+
+    .frame-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .photo-frame {
+      width: 250px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Frame Style 1 */
+    .frame-style-1 {
+      border: 10px solid white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Frame Style 2 */
+    .frame-style-2 {
+      border-radius: 20px;
+      border: 5px solid #333;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.4), 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      background-color: rgb(91, 77, 61);
+      color: rgb(221, 219, 223)
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Photo Frames!!</h1>
+  <button onclick="toggleFrames()">Toggle Frame Style</button>
+  
+
+  <div class="frame-container">
+    <div class="photo-frame frame-style-1">
+      <img src="frames/frame1.png" alt="Photo 1">
+    </div>
+    <div class="photo-frame frame-style-1">
+      <img src="frames/frame2.png" alt="Photo 2">
+    </div>
+  </div>
+
+  <script>
+    let styleToggle = true;
+
+    function toggleFrames() {
+      const frames = document.querySelectorAll('.photo-frame');
+      frames.forEach(frame => {
+        frame.classList.toggle('frame-style-1', styleToggle);
+        frame.classList.toggle('frame-style-2', !styleToggle);
+      });
+      styleToggle = !styleToggle;
+    }
+  </script>
+
+</body>
+</html>

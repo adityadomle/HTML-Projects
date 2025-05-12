@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #d0f0c0, #ffffff);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 40px;
+    font-size: 3rem;
+    color: #4a7c59;
+  }
+  
+  .garden {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 80vh;
+    gap: 40px;
+  }
+  
+  .flower {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff69b4, #ff1493);
+    transform: scale(0);
+    transition: transform 1s ease-in-out;
+  }
+  
+  .flower.bloom {
+    width: 100px;
+    height: 100px;
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  }
